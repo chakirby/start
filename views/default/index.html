@@ -1,27 +1,24 @@
 {{extend 'layout.html'}}
-<h2>Home Page</h2>
+
+
 {{block head}}
-<script src="{{=URL('static', 'js/vue.js')}}"></script>
-<script>
-    var posts_url = "{{=URL('api', 'get_posts')}}";
-    var add_post_url = "{{=URL('api', 'add_post', user_signature=True)}}";
-    var edit_post_url = "{{=URL('api', 'edit_post', user_signature=True)}}";
-    var del_post_url = "{{=URL('api', 'del_post', user_signature=True)}}";
-</script>
-{{end}}
 
 <div class="main_content">
 
     <div id="vue-div" class="display:none">
         <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
-            <img src="{{=URL('static', 'images/Slug.png')}}">
+        <h2>Home Page</h2>
+        {{if auth.user:}}
+            <h3>Welcome, {{=auth.user.first_name}}!</h3>
+        {{pass}}
+        <img src="{{=URL('static', 'images/Slug.png')}}">
     </div>
-
+    <div>
+        {{=A('Class Page', _href=URL('default','classpage'))}}
+    </div>
 </div>
 
-<div>
-{{=A('Class Page', _href=URL('default','classpage'))}}
-</div>
+
 
 
 
