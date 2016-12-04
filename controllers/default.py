@@ -24,6 +24,12 @@ def index():
     """
     return dict()
 
+def about():
+    """
+    Nothing here, just an about page!
+    """
+    return dict()
+    
 def classpage():
 
     return dict()
@@ -75,5 +81,3 @@ def call():
     supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
     """
     return service()
-
-

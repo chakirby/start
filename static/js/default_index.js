@@ -90,12 +90,24 @@ var app = function() {
         console.log("yes");
         self.vue.editing = !self.vue.editing;
         self.vue.edit_id = post_id;
+        var idx = null;
+            for (var i = 0; i < self.vue.posts.length; i++) {
+                if (self.vue.posts[i].id === post_id) {
+                        // If I set this to i, it won't work, as the if below will
+                        // return false for items in first position.
+                    idx = i + 1;
+                    break;
+                }
+            }
+        console.log(idx)
+        //self.vue.temp = self.vue.post_content;
     };
 
     self.cancel_edit = function () {
         self.vue.editing = !self.vue.editing;
         self.vue.edit_id = 0;
         self.vue.post_content="";
+        //self.vue.edit_content = self.vue.temp;
     };
 
     self.delete_track = function(post_id) { //lol that name though
@@ -142,7 +154,8 @@ var app = function() {
             edit_content: null,
             selected: null,
             edit_id: 0,
-            show: true
+            show: true,
+            temp: '', //this is to fix temporary editing text
         },
         methods: {
             get_more: self.get_more,
