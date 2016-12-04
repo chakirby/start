@@ -23,13 +23,13 @@ def index():
     This is your main controller.  Here you do almost nothing; you just cause index.html to be served.
     """
     return dict()
-    
-def about():
-    """
-    Nothing here, just an about page!
-    """
+
+def classpage():
+
     return dict()
 
+def asgpage():
+    return dict()
 
 @auth.requires_login()
 def edit():
