@@ -6,8 +6,9 @@
 # ----------------------------------------------------------------------------------------------------------------------
 #<img src="{{=URL('static', 'images/Slug.png')}}">
 response.logo = CENTER(IMG(_src=URL('static', 'images/Slug.png'),#A(B('web', SPAN(2), 'py'), XML('&trade;&nbsp;'),
-                _style="height: 64px; width:auto;",
-                _href="http://www.web2py.com/"))#  _class="navbar-brand", _href="http://www.web2py.com/",
+                _href="http://www.web2py.com/",
+                _style="height: 64px; width:auto;"
+                ))#  _class="navbar-brand", _href="http://www.web2py.com/",
                 #  _id="web2py-logo")
 response.title = request.application.replace('_', ' ').title()
 response.subtitle = ''
@@ -30,8 +31,10 @@ response.google_analytics_id = None
 # ----------------------------------------------------------------------------------------------------------------------
 
 response.menu = [
-    (T('Home'), False, URL('default', 'index'), [(T('Design'), False, URL('admin', 'default', 'design/%s' % request.application))]),
-    (T('About'), False, "", [])
+    (T('Home'), False, URL('default', 'index')),
+    (T('About'), False, URL('default','about'))
+    #(T('Home'), False, URL('default', 'index'), [(T('Design'), False, URL('admin', 'default', 'design/%s' % request.application))]),
+    #(T('About'), False, "", [])
 ]
 
 DEVELOPMENT_MENU = False
