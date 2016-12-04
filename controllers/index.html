@@ -1,0 +1,25 @@
+{{extend 'layout.html'}}
+
+
+{{block head}}
+
+<div class="main_content">
+
+    <div id="vue-div" class="display:none">
+        <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+        <h2>Home Page</h2>
+        {{if auth.user:}}
+            <h3>Welcome, {{=auth.user.first_name}}!</h3>
+        {{pass}}
+        <img src="{{=URL('static', 'images/Slug.png')}}">
+    </div>
+    <div>
+        {{=A('Class Page', _href=URL('default','classpage'))}}
+    </div>
+</div>
+
+
+
+
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
