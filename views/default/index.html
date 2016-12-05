@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 <div class="center">
-<h2>Sluggish</h2>
-    </div>
+    <h2>Sluggish</h2>
+</div>
 
 {{block head}}
 <script src="{{=URL('static', 'js/vue.js')}}"></script>
@@ -23,8 +23,8 @@
             <img src="{{=URL('static', 'images/Slug.png')}}">
             </div>
             <div class="center">
-                <a href={{=URL('default','classpage')}}, class="btn large gray rounded"><tt>Login</tt></a>
-                <a href={{=URL('default','classpage')}}, class="btn large gray rounded"><tt>Sign Up</tt></a>
+                <a href={{=URL('default','user/login')}} class="btn large gray rounded"><tt>Login</tt></a>
+                <a href={{=URL('default','user/register')}} class="btn large gray rounded"><tt>Sign Up</tt></a>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
             </div>
             <div class="center">
                 <!--{{=A('Class Page', _href=URL('default','classpage'), _class="btn btn-success")}}-->
-                <a href={{=URL('default','classpage')}}, class="btn large green rounded"><tt>Class Page</tt></a>
+                <a href={{=URL('default','classpage')}} class="btn large navy rounded"><tt>Class Page</tt></a>
             </div>
         {{pass}}
 
