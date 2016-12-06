@@ -15,7 +15,7 @@ db.define_table('post',
                 Field('post_selected', 'text'), #this is working status, eg "Done"
                 Field('created_on', 'datetime', default=datetime.datetime.utcnow()),
                 Field('updated_on', 'datetime', update=datetime.datetime.utcnow()),
-                #however we're going to add due date matters a lot more than created_on or updated_on
+                Field('post_duedate','date'),
                 )
 
 # I don't want to display the user email by default in all forms.

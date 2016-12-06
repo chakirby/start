@@ -44,15 +44,17 @@ var app = function() {
 
     self.add_post = function () {
         // The submit button to add a track has been added.
+        //console.log(self.vue.selected);
         $.post(add_post_url,
             {
                 content: self.vue.form_content,
                 selected: self.vue.selected,
+                duedate: self.vue.form_duedate
             },
             function (data) {
                 $.web2py.enableElement($("#add_post_submit"));
                 self.vue.posts.unshift(data.post);
-                console.log(self.vue.posts.length);
+                //console.log(self.vue.posts.length);
                 // if posts length is greater than 20 has_more is true.
                 // Feel free to set this value to whatever seems useful!
                 // (maybe eventually even allow it to be user-defined? maybe.)
@@ -78,7 +80,8 @@ var app = function() {
         $.post(edit_post_url,
             {
                 post_content: self.vue.edit_content,
-                post_selected: self.vue.selected,
+                selected: self.vue.selected,
+                duedate: self.vue.edit_duedate,
                 id: self.vue.edit_id
             },
             function (data) {
@@ -152,7 +155,9 @@ var app = function() {
             has_more: false,
             form_content: null,
             edit_content: null,
-            selected: null,
+            selected: '',
+            form_duedate: '',
+            edit_duedate: '',
             edit_id: 0,
             show: true,
             temp: '', //this is to fix temporary editing text

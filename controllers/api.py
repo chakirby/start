@@ -23,7 +23,7 @@ def get_posts():
     posts = []
     has_more = False
 
-    rows = db().select(db.post.ALL, orderby=~db.post.created_on, limitby=(start_idx, end_idx + 1))
+    rows = db().select(db.post.ALL, orderby=~db.post.post_duedate, limitby=(start_idx, end_idx + 1))
     for i, r in enumerate(rows):
         #print r
         name = get_user_name_from_email(r.user_email)
@@ -35,7 +35,8 @@ def get_posts():
                 selected=r.post_selected,
                 created_on=r.created_on,
                 updated_on=r.updated_on,
-                poster_name=name
+                poster_name=name,
+                duedate=r.post_duedate
 
 
             )
@@ -56,7 +57,7 @@ def add_post():
     """Here you get a new post and add it.  Return what you want."""
     # Implement me!
     user_email = auth.user.email or None
-    p_id = db.post.insert(post_content=request.vars.content)
+    p_id = db.post.insert(post_content=request.vars.content, post_selected=request.vars.selected, post_duedate=request.vars.duedate)
     p = db.post(p_id)
     name = get_user_name_from_email(p.user_email)
     post = dict(
@@ -66,7 +67,8 @@ def add_post():
             selected=p.post_selected,
             created_on=p.created_on,
             updated_on=p.updated_on,
-            poster_name=name
+            poster_name=name,
+            duedate=p.post_duedate
 
     )
     print p
@@ -76,7 +78,7 @@ def add_post():
 @auth.requires_signature()
 def edit_post():
     post = db(db.post.id == request.vars.id).select().first()
-    post.update_record(post_content=request.vars.post_content)
+    post.update_record(post_content=request.vars.post_content, post_selected=request.vars.selected, post_duedate=request.vars.duedate)
 
     print post
     return dict()

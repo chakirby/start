@@ -50,6 +50,12 @@
                         <option>Working</option>
                         <option>Not Done</option>
                     </select>-->
+                    <form>
+                        <input type="date" id="date_input" v-model="form_duedate">
+                    </form>
+                    <!--{{=date}}
+                    {{=time}}-->
+                    
                     <input type="radio" id="done" value="Done" v-model="selected">
                     <label for="done">Done</label>
                     <input type="radio" id="working" value="Working" v-model="selected">
@@ -86,6 +92,15 @@
                                 <textarea class="form-control string" id="no_table_content" v-model="edit_content = post.content" placeholder="Content" type="text" ></textarea>
                                 <span class="help-block"></span>
                             </div>
+                            <form>
+                                <input type="date" id="date_input" v-model="edit_duedate">
+                            </form>
+                            <input type="radio" id="done" value="Done" v-model="selected">
+                            <label for="done">Done</label>
+                            <input type="radio" id="working" value="Working" v-model="selected">
+                            <label for="working">Working</label>
+                            <input type="radio" id="notdone" value="Not Done" v-model="selected">
+                            <label for="notdone">Not Done</label>
                         </div>
 
 
@@ -108,7 +123,6 @@
                         </div>
                         <div><!-- v-if="!editing || (editing && edit_id != post.id)"-->
                             <p>${post.content}</p>
-                            <p>${post.selected}</p>
                         </div>
 
                         <!--<p>${post.created_on}</p>-->
@@ -117,6 +131,8 @@
                         <!-- if it is your post show the editing icons -->
                         {{if auth.user:}}
                             <div v-if="post.user_email == '{{=auth.user.email}}'">
+                                ${post.duedate}
+                                ${post.selected} 
                                 <i class="fa fa-pencil" v-on:click="edit_post(post.id)"></i>
                                 <i class="fa fa-trash-o" v-on:click="delete_track(post.id)"></i>
                             </div>
