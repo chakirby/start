@@ -1,9 +1,9 @@
 STUFF TO FIX!
 
-When posting, the status is posted as null, so it doesn't show up in-post
+Editing is a little weird:
 
-When editing a post's text, the post will appear to update even if you press Cancel
+ Starting an edit doesn't use the current post for defaults; instead, everything is blank
 
-  (if you make it show post text while editing you can see it gets updated in real time)
-  
-  (it doesn't really edit, as shown when refreshing, but yeah idk)
+ Even if you cancel editing a post, the edited text you typed will display until you refresh
+ 
+ Even if you submit a post edit, the duedate and status won't update until you refresh
