@@ -1,1 +1,14 @@
-body {background: gray}
+body {
+    background: gray
+}
+.container {
+    min-height: 600px;
+    height: auto !important;
+    height: 600px;
+    margin:0px;
+}
+.threequarters{
+    min-height: 600px;
+    height: auto !important;
+    height: 600px;
+}

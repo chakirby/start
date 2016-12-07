@@ -8,8 +8,6 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-import datetime
-
 def get_user_name_from_email(email):
     """Returns a string corresponding to the user first and last names,
     given the user email."""
@@ -19,25 +17,22 @@ def get_user_name_from_email(email):
     else:
         return ' '.join([u.first_name, u.last_name])
 
-        
+
 def index():
     """
     This is your main controller.  Here you do almost nothing; you just cause index.html to be served.
     """
     return dict()
 
+
 def about():
     """
     Nothing here, just an about page!
     """
     return dict()
-    
-def classpage():
-    date = datetime.date.today()
-    time = datetime.time.max
-    return dict(date=date, time=time)
-    
-def asgpage():
+
+@auth.requires_login()
+def student():
     return dict()
 
 @auth.requires_login()
