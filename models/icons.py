@@ -12,3 +12,5 @@ icon_your_review = icon_view
 icon_delete = I(_class='fa fa-trash-o')
 icon_hide = I(_class='fa fa-eye-slash')
 icon_cancel = I(_class = 'fa fa-times')
+icon_delete = I(_class = 'fa fa-trash-o')
+icon_warning = I(_class = 'fa fa-warning')

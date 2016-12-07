@@ -5,7 +5,7 @@
 # Customize your APP title, subtitle and menus here
 # ----------------------------------------------------------------------------------------------------------------------
 #<img src="{{=URL('static', 'images/Slug.png')}}">
-response.logo = CENTER(IMG(_src=URL('static', 'images/Slug.png'),#A(B('web', SPAN(2), 'py'), XML('&trade;&nbsp;'),
+response.logo = CENTER(IMG(_src=URL('static', 'images/Title.png'),#A(B('web', SPAN(2), 'py'), XML('&trade;&nbsp;'),
                 _href="http://www.web2py.com/",
                 _style="height: 64px; width:auto;"
                 ))#  _class="navbar-brand", _href="http://www.web2py.com/",
@@ -32,6 +32,7 @@ response.google_analytics_id = None
 
 response.menu = [
     (T('Home'), False, URL('default', 'index')),
+    (T('Student'), False, URL('default', 'student')),
     (T('About'), False, URL('default','about'))
     #(T('Home'), False, URL('default', 'index'), [(T('Design'), False, URL('admin', 'default', 'design/%s' % request.application))]),
     #(T('About'), False, "", [])
