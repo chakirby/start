@@ -24,9 +24,10 @@
     <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}"/>
     <link href={{=URL('static', 'css/stupid.css')}} rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{=URL('static','css/myapp.css')}}"/>
+    <link rel="stylesheet" href="{{=URL('static','css/page.css')}}"/>
     <link rel="stylesheet" href="{{=URL('static', 'font-awesome-4.6.3/css/font-awesome.min.css')}}"/>
 
-    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.png')}}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}">
     <!-- All JavaScript at the bottom, except for Modernizr which enables
          HTML5 elements & feature detects -->
@@ -55,12 +56,6 @@
     <nav class="navbar my-nav-tag navbar-default navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           {{=response.logo or ''}}
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
